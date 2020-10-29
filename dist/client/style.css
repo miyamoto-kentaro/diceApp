@@ -1,0 +1,53 @@
+body {
+  background-color: rgb(228, 228, 255);
+}
+
+#main_content {
+  position: relative;
+  float: right;
+  height: 500px;
+  width: 1200px;
+  border: solid 1px black;
+  background-color: white;
+}
+
+#home_page {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+#dice_room {
+  display: none;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+
+#top_var {
+  display: inline-block;
+  width: 100%;
+  background-color: blacks;
+}
+
+#room_member {
+  display: inline-block;
+  top: 0;
+  width: 60%;
+}
+
+#chat_park {
+  display: inline-block;
+  top: 0;
+  width: 38%;
+  height: 100%;
+}
+
+#user_operation {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 100%;
+  background-color: cornflowerblue;
+}

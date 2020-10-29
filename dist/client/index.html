@@ -6,11 +6,74 @@
 </head>
 
 <body>
+    <div id="main_content">
+        <div id="home_page">
+            <div class="jumbotron text-center" style="margin-bottom:0">
+                <h1>Welcome to DiceApp</h1>
+                <p>roomに参加することによって、友達とダイスを共有することができます</p>
+            </div>
+            <div id="user_setting">
+                <div class="join_room alert alert-primary text-center">
+                    <div id="adduser" class="">
+                        <label for="myusername">ユーザー名を入力</label>
+                        <input class="form-control" id="myusername">
+                        <small id="usernameHelp" class="form-text text-muted">参加するユーザー名を入力してください</small>
+                    </div>
+                    <div id="addroom" class="">
+                        <label for="myroomname">部屋の合言葉を入力</label>
+                        <input class="form-control" id="myroomname">
+                    </div>
+                    <a class="btn btn-primary join_room_btn" href="#" onclick="client.joinRoom()" role="button">join_room</a>
+                </div>
+            </div>
+        </div>
+        <div id="dice_room">
+            <div id="top_var"><ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" onclick="client.exitRoom()">exit</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a id="showroomname" class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+                </li>
+            </ul>
+            </div>
+            <div id="main_game">
+                <ul id="room_member" class="list-group">
+                    <li class="list-group-item active">Room Member</li>
+                </ul>
+            <div id="user_operation">
+                <h1>operation</h1>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="client.test()">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <script src="socket.io/socket.io.js"></script>
     <script src="client.js"></script>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </body>
 
 <script src="jquery/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </html>

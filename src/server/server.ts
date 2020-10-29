@@ -24,10 +24,18 @@ class App {
         this.io = socketIO(this.server);
 
         this.io.on('connection', (socket: socketIO.Socket) => {
-            console.log('a user connected : ' + socket.id);
+            const socketId = socket.id;
+            console.log('a user connected : ' + socketId);
 
             socket.on('disconnect', function () {
                 console.log('socket disconnected : ' + socket.id);
+            });
+
+            socket.on('joinroom',(username,roomname) => {
+                console.log(username + ' join ' + roomname);
+                socket.join(roomname);
+                socket.broadcast.to(roomname).emit('someonejoin',username,roomname);
+                socket.emit('myjoin',username,roomname);
             });
         });
     }
